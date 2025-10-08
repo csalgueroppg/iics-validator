@@ -1,0 +1,39 @@
+{
+  "name": "iics-field-validator",
+  "version": "1.0.0",
+  "description": "Chrome extension to validate IICS CAI Process Designer field naming standards",
+  "type": "module",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "clean": "rimraf dist",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "prebuild": "npm run clean && npm run type-check"
+  },
+  "keywords": [
+    "chrome-extension",
+    "iics",
+    "informatica",
+    "validation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.254",
+    "@types/node": "^20.10.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "rimraf": "^5.0.5",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "IICS Field Validator",
+  "version": "1.0.0",
+  "description": "Validates naming standards for IICS CAI Process Designer fields",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/icon.svg",
+    "default_title": "IICS Field Validator"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.informaticacloud.com/*"],
+      "js": ["content/content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["*://*.informaticacloud.com/*"],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "icons": {
+    "16": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "128": "icons/icon.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["*://*.informaticacloud.com/*"]
+    }
+  ]
+}
